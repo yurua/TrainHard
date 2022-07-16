@@ -1,0 +1,126 @@
+<resources>
+
+  <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="android:textColorSecondary">@color/white60</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="alertDialogTheme">@style/PreferenceDialogTheme</item>
+    <item name="materialAlertDialogTheme">@style/DialogTheme</item>
+    <item name="actionOverflowMenuStyle">@style/popupMenuStyle</item>
+    <item name="snackbarButtonStyle">@style/SnackButton</item>
+    <item name="snackbarStyle">@style/SnackBarStyle</item>
+    <item name="snackbarTextViewStyle">@style/SnackTitle</item>
+    <item name="fontFamily">@font/sans_cyr</item>
+    <item name="android:statusBarColor">@color/darker</item>
+    <item name="android:navigationBarColor">@color/darker</item>
+    <item name="preferenceTheme">@style/Pref</item>
+  </style>
+
+    <style name="popupMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
+    <item name="android:popupBackground">@drawable/dialog_rounded2</item>
+  </style>
+
+  <style name="Pref" parent="@style/PreferenceThemeOverlay">
+    <item name="fontFamily">@font/sans_cyr</item>
+  </style>
+
+  <style name="TitleBarTextAppearance" parent="android:TextAppearance.Material.Widget.Toolbar.Title">
+    <item name="android:fontFamily">@font/sans_cyr</item>
+    <item name="android:textSize">20sp</item>
+    <item name="android:textColor">@color/white87</item>
+  </style>
+
+  <style name="SubtitleBarTextAppearance" parent="android:TextAppearance.Material.Widget.Toolbar.Subtitle">
+    <item name="android:fontFamily">@font/sans_cyr</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/colorAccent</item>
+  </style>
+
+  <style name="PreferenceDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+    <item name="android:windowBackground">@drawable/dialog_rounded2</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="buttonBarNegativeButtonStyle">@style/AlertButtonStyle</item>
+    <item name="textAllCaps">false</item>
+  </style>
+
+  <style name="customChip" parent="Widget.MaterialComponents.Chip.Choice">
+    <item name="chipBackgroundColor">@color/chip_back_color</item>
+    <item name="android:textColor">@color/chip_text_color</item>
+    <item name="chipStrokeColor">@color/chip_stroke_color</item>
+    <item name="chipStrokeWidth">0.5dp</item>
+    <item name="android:textAppearance">@style/ChipStyle</item>
+  </style>
+
+  <style name="ChipStyle" parent="TextAppearance.MaterialComponents.Chip">
+    <item name="fontFamily">@font/sans_cyr</item>
+    <item name="android:fontFamily">@font/sans_cyr</item>
+  </style>
+
+  <style name="SnackTitle" parent="Widget.MaterialComponents.Snackbar.TextView">
+    <item name="android:textColor">@color/white60</item>
+  </style>
+
+  <style name="SnackBarStyle" parent="Widget.MaterialComponents.Snackbar">
+    <item name="android:background">@color/dark</item>
+  </style>
+
+  <style name="SnackButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+    <item name="textAllCaps">false</item>
+    <item name="android:textColor">@color/colorAccent</item>
+  </style>
+
+  <style name="bottomMenuStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+    <item name="android:background">@color/darker</item>
+    <item name="itemIconTint">@color/bottom_nav_view_item_color</item>
+    <item name="itemTextColor">@color/bottom_nav_view_item_color</item>
+  </style>
+
+  <style name="chipText" parent="TextAppearance.MaterialComponents.Chip">
+    <item name="android:fontFamily">@font/sans_cyr</item>
+    <item name="android:textColor">@color/colorAccent</item>
+  </style>
+
+  <style name="DialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <item name="shapeAppearanceOverlay">@style/DialogShape</item>
+    <item name="android:background">@drawable/dialog_rounded</item>
+    <item name="materialAlertDialogTitleTextStyle">@style/TitleStyle</item>
+    <item name="materialAlertDialogBodyTextStyle">@style/BodyStyle</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="buttonBarPositiveButtonStyle">@style/AlertButtonStyle</item>
+    <item name="buttonBarNegativeButtonStyle">@style/AlertButtonStyle</item>
+    <item name="textAllCaps">false</item>
+  </style>
+
+  <style name="DialogShape">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">10dp</item>
+  </style>
+
+  <style name="CircleShape">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">26dp</item>
+  </style>
+
+  <style name="TitleStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+    <item name="android:textColor">@color/white87</item>
+    <item name="android:textSize">22sp</item>
+  </style>
+
+  <style name="BodyStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+    <item name="android:textColor">@color/white60</item>
+  </style>
+
+  <style name="AlertButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+    <item name="android:textColor">@color/colorAccent</item>
+    <item name="rippleColor">@color/colorAccent</item>
+  </style>
+
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+
+</resources>

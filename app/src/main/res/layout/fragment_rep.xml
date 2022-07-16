@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/repParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.rep.RepFragment"
+    >
+
+  <TextView
+      android:id="@+id/textView3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="Повторы"
+      android:textSize="18sp"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintTop_toBottomOf="@+id/textView2"
+      tools:text="Повторы" />
+
+  <EditText
+      android:id="@+id/etWeight"
+      android:layout_width="120dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="110dp"
+      android:layout_marginTop="32dp"
+      android:background="@drawable/custom_input"
+      android:ems="10"
+      android:inputType="numberDecimal"
+      android:padding="6dp"
+      android:selectAllOnFocus="true"
+      android:textSize="16sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <EditText
+      android:id="@+id/etReps"
+      android:layout_width="120dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="110dp"
+      android:layout_marginTop="12dp"
+      android:layout_marginBottom="24dp"
+      android:background="@drawable/custom_input"
+      android:ems="10"
+      android:inputType="number"
+      android:padding="6dp"
+      android:selectAllOnFocus="true"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etWeight"
+      />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="36dp"
+      android:layout_marginEnd="16dp"
+      android:text="Вес"
+      android:textSize="18sp"
+      app:layout_constraintEnd_toStartOf="@+id/etWeight"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Вес" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

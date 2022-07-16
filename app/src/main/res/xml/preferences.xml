@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <PreferenceCategory
+      app:iconSpaceReserved="false"
+      app:key="primary"
+      app:title="Основные">
+    <SwitchPreferenceCompat
+        app:iconSpaceReserved="false"
+        app:key="keep_screen_on"
+        app:title="Экран всегда включен" />
+  </PreferenceCategory>
+  <PreferenceCategory
+      app:iconSpaceReserved="false"
+      app:key="reserve"
+      app:title="Резервная копия">
+    <Preference
+        app:icon="@drawable/ic_backup"
+        app:iconSpaceReserved="true"
+        app:key="reserve_upload"
+        app:title="Создать резервную копию" />
+    <Preference
+        app:icon="@drawable/ic_download"
+        app:iconSpaceReserved="true"
+        app:key="reserve_download"
+        app:title="Восстановить копию" />
+  </PreferenceCategory>
+  <PreferenceCategory
+      app:iconSpaceReserved="false"
+      app:key="additional"
+      app:title="О приложении">
+    <Preference
+        app:icon="@drawable/ic_about"
+        app:iconSpaceReserved="false"
+        app:key="version"
+        app:summary="@string/version_code"
+        app:title="Версия" />
+  </PreferenceCategory>
+</PreferenceScreen>

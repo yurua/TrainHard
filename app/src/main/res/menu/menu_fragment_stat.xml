@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/stat_chest"
+        android:title="Грудь"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/stat_biceps"
+        android:title="Бицепс"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/stat_triceps"
+        android:title="Трицепс"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/stat_shoul"
+        android:title="Плечи"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/stat_legs"
+        android:title="Ноги"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/stat_back"
+        android:title="Спина"
+        app:showAsAction="never" />
+  </group>
+</menu>

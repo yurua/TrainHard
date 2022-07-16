@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "234837218134",
+    "firebase_url": "https://trainhard-278114.firebaseio.com",
+    "project_id": "trainhard-278114",
+    "storage_bucket": "trainhard-278114.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234837218134:android:c3f6ae202cda7f0f28fcf7",
+        "android_client_info": {
+          "package_name": "com.yurua.trainhard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234837218134-91s279rb966bf19qhbqf3g7ev0am6pq2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yurua.trainhard",
+            "certificate_hash": "5c7db45b85c25b79ba341bdfea02d03b78aacf44"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3kw9gmcDxgBP15zKjILYZFDFF3DaE0B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

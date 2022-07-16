@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darker"
+    >
+
+  <com.google.android.material.chip.ChipGroup
+      android:id="@+id/group_filter"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="55dp"
+      android:elevation="12dp"
+      app:singleLine="false"
+      app:chipSpacingHorizontal="7dp"
+      app:layout_constraintEnd_toEndOf="@+id/cardView"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/cardView"
+      app:selectionRequired="true"
+      app:singleSelection="true">
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip4"
+        style="@style/customChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_cyr"
+        android:text="Грудь"
+        android:textAlignment="center"
+        android:textSize="13sp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip5"
+        style="@style/customChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_cyr"
+        android:text="Бицепс"
+        android:textAlignment="center"
+        android:textSize="13sp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip9"
+        style="@style/customChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_cyr"
+        android:text="Плечи"
+        android:textAlignment="center"
+        android:textSize="13sp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip7"
+        style="@style/customChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_cyr"
+        android:text="Трицепс"
+        android:textAlignment="center"
+        android:textSize="13sp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip8"
+        style="@style/customChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_cyr"
+        android:text="Ноги"
+        android:textAlignment="center"
+        android:textSize="13sp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip6"
+        style="@style/customChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sans_cyr"
+        android:text="Спина"
+        android:textAlignment="center"
+        android:textSize="13sp" />
+  </com.google.android.material.chip.ChipGroup>
+  <com.google.android.material.card.MaterialCardView
+      android:id="@+id/cardView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      app:cardBackgroundColor="@color/darker"
+      app:cardCornerRadius="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:strokeColor="@color/gray"
+      app:strokeWidth="0.1dp"
+      >
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darker"
+        app:abbreviationsBarColor="@color/dark"
+        app:abbreviationsLabelsColor="@color/white60"
+        app:anotherMonthsDaysLabelsColor="@color/lightGray"
+        app:daysLabelsColor="@color/white60"
+        app:eventsEnabled="true"
+        app:forwardButtonSrc="@drawable/ic_next_month"
+        app:headerColor="@color/dark"
+        app:headerLabelColor="@color/white87"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pagesColor="@color/darker"
+        app:previousButtonSrc="@drawable/ic_prev_month"
+        app:selectionColor="@color/colorAccent2"
+        app:selectionLabelColor="@color/lightGray"
+        app:todayLabelColor="@color/colorAccent2"
+        app:type="one_day_picker"
+        />
+  </com.google.android.material.card.MaterialCardView>
+  <View
+      android:id="@+id/divider2"
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:background="@color/lightGray"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/cardView"
+      />
+  <TextView
+      android:id="@+id/textView7"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="12dp"
+      android:layout_marginTop="16dp"
+      android:fontFamily="@font/sans_cyr"
+      android:text="Группы"
+      android:textSize="18sp"
+      android:textColor="@color/white60"
+      app:layout_constraintStart_toStartOf="@+id/cardView"
+      app:layout_constraintTop_toBottomOf="@+id/cardView"
+      tools:text="Группы"
+      />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

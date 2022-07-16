@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable-v24/dialog_rounded_green.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/custom_input.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded2.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded_blue.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded_cyan.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded_orange.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded_red.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/dialog_rounded_yellow.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/divider.xml" value="0.4203125" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/grad.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_add.xml" value="0.4203125" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_add2.xml" value="0.4203125" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_filter.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_more.xml" value="0.4203125" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_more_vertical.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_search.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/ic_search_close.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/drawable/search_input.xml" value="0.4322916666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/activity_main.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/fragment_calendar.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/fragment_gym.xml" value="0.4" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/fragment_rep.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/fragment_stat.xml" value="0.6" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/fragment_version.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/fragment_works.xml" value="0.4041666666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/item_work.xml" value="0.536" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/list_group.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/layout/list_item.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/menu/menu_activity_main.xml" value="0.4041666666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/menu/menu_fragment_gym.xml" value="0.4041666666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/menu/menu_fragment_stat.xml" value="0.4161458333333333" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/menu/menu_fragment_workouts.xml" value="0.4041666666666667" />
+        <entry key="..\:/Master/TrainHard_v2/app/src/main/res/xml/preferences.xml" value="0.4041666666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="NullableNotNullManager">
+    <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
+    <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
+    <option name="myNullables">
+      <value>
+        <list size="15">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
+          <item index="2" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
+          <item index="3" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
+          <item index="4" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.Nullable" />
+          <item index="6" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNullable" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.Nullable" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableDecl" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableType" />
+          <item index="10" class="java.lang.String" itemvalue="android.annotation.Nullable" />
+          <item index="11" class="java.lang.String" itemvalue="com.android.annotations.Nullable" />
+          <item index="12" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.Nullable" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.annotations.Nullable" />
+          <item index="14" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.Nullable" />
+        </list>
+      </value>
+    </option>
+    <option name="myNotNulls">
+      <value>
+        <list size="15">
+          <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
+          <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
+          <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
+          <item index="3" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
+          <item index="4" class="java.lang.String" itemvalue="androidx.annotation.NonNull" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
+          <item index="6" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
+          <item index="9" class="java.lang.String" itemvalue="android.annotation.NonNull" />
+          <item index="10" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="11" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
+          <item index="12" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
+          <item index="14" class="java.lang.String" itemvalue="lombok.NonNull" />
+        </list>
+      </value>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="18" project-jdk-type="JavaSDK" />
+</project>

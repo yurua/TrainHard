@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.MainActivity"
+    >
+  <androidx.fragment.app.FragmentContainerView
+      android:id="@+id/nav_host_fragment"
+      android:name="androidx.navigation.fragment.NavHostFragment"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="@color/darker"
+      app:defaultNavHost="true"
+      app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+      app:navGraph="@navigation/nav_graph"
+      />
+
+  <com.google.android.material.appbar.AppBarLayout
+      android:id="@+id/appBarLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/darker"
+      android:paddingBottom="5dp"
+      android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+      app:elevation="0dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.MaterialComponents" />
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottomNavigationView"
+      style="@style/bottomMenuStyle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingTop="10dp"
+      app:labelVisibilityMode="labeled"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:menu="@menu/menu_activity_main"
+      />
+
+  <View
+      android:id="@+id/view"
+      android:layout_width="wrap_content"
+      android:layout_height="1.0dp"
+      android:layout_marginTop="60dp"
+      android:background="@color/darker"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/appBarLayout" />
+
+  <View
+      android:id="@+id/view2"
+      android:layout_width="409dp"
+      android:layout_height="1.0dp"
+      android:background="@color/darkGray"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

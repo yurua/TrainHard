@@ -1,0 +1,104 @@
+plugins {
+  id 'com.android.application'
+  id 'com.google.gms.google-services'
+  id 'kotlin-android'
+  id 'kotlin-kapt'
+  id 'dagger.hilt.android.plugin'
+  id 'androidx.navigation.safeargs.kotlin'
+  id 'kotlin-parcelize'
+}
+android {
+  compileSdkVersion rootProject.compileSdkVersion
+  buildToolsVersion '33.0'
+
+  defaultConfig {
+    applicationId "com.yurua.trainhard"
+    minSdkVersion rootProject.minSdkVersion
+    targetSdkVersion rootProject.targetSdkVersion
+    versionCode 1
+    versionName "1.0 beta 1"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  buildFeatures {
+    viewBinding true
+  }
+
+  compileOptions {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "1.8"
+  }
+
+  kotlinOptions {
+    jvmTarget = '1.8'
+    freeCompilerArgs += "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+  }
+
+}
+
+dependencies {
+
+  implementation 'com.applandeo:material-calendar-view:1.7.0'
+  // Default dependencies
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation "androidx.core:core-ktx:1.9.0-alpha05"
+  implementation "androidx.appcompat:appcompat:$appCompatVersion"
+  implementation "com.google.android.material:material:$materialVersion"
+  implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+  implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+  implementation 'androidx.preference:preference-ktx:1.2.0'
+  testImplementation "junit:junit:$junitVersion"
+  androidTestImplementation "androidx.test.ext:junit:$testExtJunitVersion"
+  androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+  // Fragment
+  implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
+
+  // Lifecycle + ViewModel + LiveData
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+  implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+  implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+
+  // Navigation Component
+  implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+  implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+  // Room
+  implementation "androidx.room:room-runtime:$roomVersion"
+  kapt "androidx.room:room-compiler:$roomVersion"
+  implementation "androidx.room:room-ktx:$roomVersion"
+
+  // Coroutines
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
+
+
+  // Dagger Hilt
+  implementation "com.google.dagger:hilt-android:$hiltVersion"
+  kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+  kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
+
+  // DataStore
+  implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
+
+  // Chart
+  implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+  // Firebase
+  implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
+  implementation 'com.google.android.gms:play-services-auth:20.2.0'
+  implementation 'com.google.firebase:firebase-analytics-ktx:21.1.0'
+  implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
+
+}
+kapt {
+  correctErrorTypes true
+}

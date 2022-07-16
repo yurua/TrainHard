@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <bitmap
+        android:gravity="top|left"
+        android:tint="#C0CA33"
+        android:src="@drawable/ic_dot" />
+  </item>
+  <item>
+    <bitmap
+        android:gravity="center"
+        android:tint="#43A047"
+        android:src="@drawable/ic_dot" />
+  </item>
+
+  <item android:left="80dp">
+    <bitmap
+        android:gravity="right"
+        android:tint="#E53935"
+        android:src="@drawable/ic_dot"/>
+  </item>
+</layer-list>

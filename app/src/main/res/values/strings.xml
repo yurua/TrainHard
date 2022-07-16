@@ -1,0 +1,97 @@
+<resources>
+
+    <string name="user_email">yurua81@gmail.com</string>
+    <string name="user_password">yurua222</string>
+
+    <string name="material_calendar_monday">ПН</string>
+    <string name="material_calendar_tuesday">ВТ</string>
+    <string name="material_calendar_wednesday">СР</string>
+    <string name="material_calendar_thursday">ЧТ</string>
+    <string name="material_calendar_friday">ПТ</string>
+    <string name="material_calendar_saturday">СБ</string>
+    <string name="material_calendar_sunday">ВС</string>
+
+    <array name="material_calendar_months_array">
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+    </array>
+
+    <string name="material_calendar_today_button">Сегодня</string>
+    <string name="material_calendar_positive_button">Ок</string>
+    <string name="material_calendar_negative_button">Отмена</string>
+
+    <string name="app_name">Train Hard</string>
+    <string name="menu_search">Поиск</string>
+    <string name="menu_sort">Сортировка</string>
+    <string name="menu_sort_by_month">Сортировать по месяцу</string>
+    <string name="menu_sort_by_group">Сортировать по группе</string>
+    <string name="menu_show_max">Показать максимальные</string>
+    <string name="menu_delete_by_group">Удалить группу</string>
+    <string name="menu_save">Сохранить тренировку</string>
+    <string name="menu_chart">Группа мышц</string>
+
+    <string name="version_code">1.0 beta 1</string>
+
+    <string name="preferences">com.yurua.trainhard_preferences.xml</string>
+
+    <string-array name="groups">
+        <item>Грудь</item>
+        <item>Бицепс</item>
+        <item>Трицепс</item>
+        <item>Ноги</item>
+        <item>Плечи</item>
+        <item>Спина</item>
+    </string-array>
+
+    <string-array name="chest">
+        <item>"Жим штанги лежа"</item>
+        <item>"Жим гантелей"</item>
+        <item>"Разведение гантелей"</item>
+    </string-array>
+
+    <string-array name="biceps">
+        <item>"Молоток в упоре сидя"</item>
+        <item>"Подъем гантелей на бицепс"</item>
+        <item>"Подъем штанги на бицепс"</item>
+    </string-array>
+
+    <string-array name="back">
+        <item>"Тяга штанги в наклоне"</item>
+        <item>"Тяга гантели в наклоне"</item>
+        <item>"Становая тяга"</item>
+    </string-array>
+
+    <string-array name="triceps">
+        <item>"Жим узким хватом"</item>
+        <item>"Французский жим"</item>
+        <item>"Сгибание гантели за головой"</item>
+    </string-array>
+
+    <string-array name="shoulders">
+        <item>"Жим Арнольда сидя"</item>
+        <item>"Разводка гантелей в наклоне"</item>
+        <item>"Высокая тяга штанги"</item>
+    </string-array>
+
+    <string-array name="legs">
+        <item>"Приседание"</item>
+        <item>"Мертвая тяга"</item>
+        <item>"Выпады с гантелями"</item>
+    </string-array>
+
+    <string name="version">Версия 1.0 beta 1</string>
+
+    <string name="sync_status">Синхронизация данных...</string>
+    <string name="show_auto">Подсказки при поиске</string>
+
+</resources>

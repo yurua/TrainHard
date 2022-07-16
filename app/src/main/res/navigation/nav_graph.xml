@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/workFragment">
+
+  <fragment
+      android:id="@+id/workFragment"
+      android:name="com.yurua.trainhard.ui.works.WorksFragment"
+      android:label="Журнал тренировок"
+      tools:layout="@layout/fragment_works" >
+    <action
+        android:id="@+id/action_workFragment_to_gymFragment"
+        app:destination="@id/gymFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/calendarFragment"
+      android:name="com.yurua.trainhard.ui.calendar.CalendarFragment"
+      android:label="Календарь"
+      tools:layout="@layout/fragment_calendar" >
+    <action
+        android:id="@+id/action_calendarFragment_to_gymFragment"
+        app:destination="@id/gymFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/statFragment"
+      android:name="com.yurua.trainhard.ui.stat.StatFragment"
+      android:label="Статистика"
+      tools:layout="@layout/fragment_stat" />
+  <fragment
+      android:id="@+id/moreFragment"
+      android:name="com.yurua.trainhard.ui.more.MoreFragment"
+      android:label="Настройки"
+      >
+    <action
+        android:id="@+id/action_moreFragment_to_versionFragment"
+        app:destination="@id/versionFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/gymFragment"
+      android:name="com.yurua.trainhard.ui.gym.GymFragment"
+      android:label="Тренировка"
+      tools:layout="@layout/fragment_gym" >
+    <argument
+        android:name="work"
+        app:argType="com.yurua.trainhard.data.Work"
+        app:nullable="true"
+        android:defaultValue="@null" />
+    <action
+        android:id="@+id/action_gymFragment_to_repFragment"
+        app:destination="@id/repFragment" />
+    <action
+        android:id="@+id/action_gymFragment_to_groupsFragment"
+        app:destination="@id/groupsFragment" />
+  </fragment>
+  <dialog
+      android:id="@+id/groupsFragment"
+      android:name="com.yurua.trainhard.ui.groups.GroupsFragment"
+      android:label="Список упражнений"
+      tools:layout="@layout/fragment_groups" >
+    <argument
+        android:name="routines"
+        app:argType="string" />
+  </dialog>
+  <dialog
+      android:id="@+id/repFragment"
+      android:name="com.yurua.trainhard.ui.rep.RepFragment"
+      android:label="fragment_rep"
+      tools:layout="@layout/fragment_rep" >
+    <argument
+        android:name="block"
+        app:argType="integer" />
+  </dialog>
+  <dialog
+      android:id="@+id/versionFragment"
+      android:name="com.yurua.trainhard.ui.version.VersionFragment"
+      android:label="fragment_version"
+      tools:layout="@layout/fragment_version" />
+</navigation>
