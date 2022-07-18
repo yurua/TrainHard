@@ -137,7 +137,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
                 lineWidth = 1.5f
                 circleRadius = 4f
                 circleHoleRadius = 3f
-                circleHoleColor = Color.parseColor("#060809")
+                circleHoleColor = Color.parseColor("#000000")
                 colors = arrayListOf(Color.parseColor("#1af9c2"))
                 circleColors = arrayListOf(Color.parseColor("#1af9c2"))
                 valueTextSize = 10f
@@ -150,7 +150,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         }
 
         yAxis = binding.chart.axisLeft
-        yAxis.gridColor = Color.parseColor("#2c2c2c")
+        yAxis.gridColor = Color.parseColor("#6a6a6a")
         yAxis.textSize = 10f
         yAxis.axisLineWidth = 0.1f
         yAxis.gridLineWidth = 0.6f
@@ -160,7 +160,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         xAxis = binding.chart.xAxis
         xAxis.position = BOTTOM
         xAxis.axisLineWidth = 0.1f
-        xAxis.gridColor = Color.parseColor("#2c2c2c")
+        xAxis.gridColor = Color.parseColor("#6a6a6a")
         xAxis.textSize = 10f
         xAxis.gridLineWidth = 0.6f
         xAxis.setDrawLabels(false)

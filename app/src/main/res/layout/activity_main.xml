@@ -72,7 +72,7 @@
       android:id="@+id/view2"
       android:layout_width="409dp"
       android:layout_height="1.0dp"
-      android:background="@color/darkGray"
+      android:background="@color/dark"
       android:visibility="visible"
       app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
       app:layout_constraintEnd_toEndOf="parent"

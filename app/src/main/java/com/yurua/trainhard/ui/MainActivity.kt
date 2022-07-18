@@ -29,95 +29,105 @@ const val GYM_RESULT_OK = Activity.RESULT_FIRST_USER
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), TitleListener {
 
-  lateinit var auth: FirebaseAuth
+    lateinit var auth: FirebaseAuth
 
-  private lateinit var navController: NavController
-  private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
-  private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
-  override fun onStart() {
-    super.onStart()
-    authUser()
-  }
+    override fun onStart() {
+        super.onStart()
+        authUser()
+    }
 
-  fun authUser() {
-    val user = auth.currentUser
-    if (user != null)
-      Toast.makeText(this@MainActivity, "Пользователь  ${user.email} в системе", Toast.LENGTH_SHORT).show()
-    else {
-      val email = getString(R.string.user_email)
-      val password = getString(R.string.user_password)
-      auth.signInWithEmailAndPassword(email, password)
-        .addOnCompleteListener { task ->
-          if (task.isSuccessful)
-            Toast.makeText(this@MainActivity, "Пользователь  ${auth.currentUser?.email} ", Toast.LENGTH_SHORT).show()
-          else
-            Toast.makeText(this@MainActivity, "Ошибка входа!", Toast.LENGTH_LONG).show()
+    fun authUser() {
+        val user = auth.currentUser
+        if (user != null)
+//            Toast.makeText(
+//                this@MainActivity,
+//                "Пользователь  ${user.email} в системе",
+//                Toast.LENGTH_SHORT
+//            ).show()
+        else {
+            val email = getString(R.string.user_email)
+            val password = getString(R.string.user_password)
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful)
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Пользователь  ${auth.currentUser?.email} ",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    else
+                        Toast.makeText(this@MainActivity, "Ошибка входа!", Toast.LENGTH_LONG).show()
+                }
         }
     }
-  }
 
-  override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
 
-    super.onCreate(savedInstanceState)
-    auth = FirebaseAuth.getInstance()
+        super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()
 
-    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-    val sharedPreferences = getSharedPreferences(packageName  + "_preferences", Context.MODE_PRIVATE)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        val sharedPreferences =
+            getSharedPreferences(packageName + "_preferences", Context.MODE_PRIVATE)
 
-    binding = ActivityMainBinding.inflate(layoutInflater)
-    setContentView(binding.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    val navHostFragment = supportFragmentManager.findFragmentById(id.nav_host_fragment) as NavHostFragment
-    navController = navHostFragment.navController
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
 
-    appBarConfiguration = AppBarConfiguration(
-      setOf(
-        id.workFragment,
-        id.statFragment,
-        id.calendarFragment,
-      )
-    )
-    val toolbar = findViewById<Toolbar>(id.toolbar)
-    //toolbar.overflowIcon = ContextCompat.getDrawable(this, R.drawable.ic_filter)
-
-    setSupportActionBar(toolbar)
-    supportActionBar?.setBackgroundDrawable(
-      ColorDrawable(
-        resources.getColor(
-          color.darker,
-          null
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                id.workFragment,
+                id.statFragment,
+                id.calendarFragment,
+            )
         )
-      )
-    )
+        val toolbar = findViewById<Toolbar>(id.toolbar)
+        //toolbar.overflowIcon = ContextCompat.getDrawable(this, R.drawable.ic_filter)
 
-    toolbar.setTitleTextAppearance(this, R.style.TitleBarTextAppearance)
-    toolbar.setSubtitleTextAppearance(this, R.style.SubtitleBarTextAppearance)
-    toolbar.setSubtitleTextColor(Color.parseColor("#99FFFFFF"))
+        setSupportActionBar(toolbar)
+        supportActionBar?.setBackgroundDrawable(
+            ColorDrawable(
+                resources.getColor(
+                    color.darker,
+                    null
+                )
+            )
+        )
 
-    binding.bottomNavigationView.setupWithNavController(navController)
-    setupActionBarWithNavController(navController, appBarConfiguration)
+        toolbar.setTitleTextAppearance(this, R.style.TitleBarTextAppearance)
+        toolbar.setSubtitleTextAppearance(this, R.style.SubtitleBarTextAppearance)
+        toolbar.setSubtitleTextColor(Color.parseColor("#99FFFFFF"))
 
-    navController.addOnDestinationChangedListener { _, destination, _ ->
-      when (destination.id) {
-        id.workFragment, id.statFragment, id.calendarFragment -> {
-          binding.bottomNavigationView.visibility =
-            View.VISIBLE
-          currDestination = destination.id
+        binding.bottomNavigationView.setupWithNavController(navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                id.workFragment, id.statFragment, id.calendarFragment -> {
+                    binding.bottomNavigationView.visibility =
+                        View.VISIBLE
+                    currDestination = destination.id
+                }
+                else -> binding.bottomNavigationView.visibility = View.GONE
+            }
         }
-        else -> binding.bottomNavigationView.visibility = View.GONE
-      }
     }
-  }
 
-  override fun onSupportNavigateUp(): Boolean {
-    navController.navigate(currDestination)
-    return true
-  }
+    override fun onSupportNavigateUp(): Boolean {
+        navController.navigate(currDestination)
+        return true
+    }
 
-  override fun setToolbarTitle(str: String) {
-    supportActionBar?.subtitle = str
-  }
+    override fun setToolbarTitle(str: String) {
+        supportActionBar?.subtitle = str
+    }
 }
 
