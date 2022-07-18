@@ -21,10 +21,10 @@
     <color name="axis">#000000</color>
     <color name="disable">#b3b3b3</color>
 
-    <color name="lightGray">#828282</color>
-    <color name="gray">#6a6a6a</color>
-    <color name="darkGray">#515151</color>
-    <color name="dark">#393939</color>
+    <color name="lightGray">#515151</color>
+    <color name="gray">#454545</color>
+    <color name="darkGray">#353535</color>
+    <color name="dark">#181818</color>
     <color name="darker">#000000</color>
 
 

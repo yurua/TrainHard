@@ -5,10 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.View
+import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
@@ -18,9 +15,12 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -60,6 +60,58 @@ class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_fragment_workouts, menu)
+
+                val searchItem = menu.findItem(R.id.action_search)
+                val searchView = searchItem.actionView as SearchView
+                searchView.background =
+                    ContextCompat.getDrawable(requireContext(), drawable.search_input)
+                searchView.apply {
+                    queryHint = HtmlCompat.fromHtml(
+                        "<font color = #515151> Поиск по группе </font>",
+                        HtmlCompat.FROM_HTML_MODE_LEGACY
+                    )
+                    imeOptions = EditorInfo.IME_ACTION_DONE
+                }
+
+                val iconClose = searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
+                iconClose.setImageResource(drawable.ic_search_close)
+
+                val autoComplete = searchView.findViewById<SearchView.SearchAutoComplete>(androidx.appcompat.R.id.search_src_text)
+                autoComplete.setTextColor(Color.parseColor("#c7c7c7"))
+                autoComplete.setBackgroundColor(Color.parseColor("#101010"))
+                autoComplete.setDropDownBackgroundResource(drawable.search_input)
+
+                val labels = listOf("Грудь", "Бицепс", "Спина", "Трицепс", "Ноги", "Плечи")
+                val adapter = ArrayAdapter(
+                    requireContext(),
+                    android.R.layout.simple_dropdown_item_1line,
+                    labels
+                )
+                autoComplete.setAdapter(adapter)
+
+                autoComplete.setOnItemClickListener { parent, _, position, _ ->
+                    val str = parent.getItemAtPosition(position) as String
+                    autoComplete.setText(str)
+                    val imm =
+                        context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(activity?.currentFocus?.windowToken, 0)
+                }
+
+                searchView.onQueryTextChanged {
+                    viewModel.searchQuery.value = it
+                }
+
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return true
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val swipeBackground = ColorDrawable(Color.parseColor("#e32636"))
         val deleteIcon = ContextCompat.getDrawable(requireActivity(), drawable.ic_delete)
@@ -217,47 +269,6 @@ class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
             }
         }
 
-        setHasOptionsMenu(true)
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-
-        inflater.inflate(R.menu.menu_fragment_workouts, menu)
-
-        val searchItem = menu.findItem(R.id.action_search)
-        val searchView = searchItem.actionView as SearchView
-        searchView.background = ContextCompat.getDrawable(requireContext(), drawable.search_input)
-        searchView.apply {
-            queryHint = HtmlCompat.fromHtml(
-                "<font color = #454545> Поиск по группе </font>",
-                HtmlCompat.FROM_HTML_MODE_LEGACY
-            )
-            imeOptions = EditorInfo.IME_ACTION_DONE
-        }
-
-        val iconClose = searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
-        iconClose.setImageResource(drawable.ic_search_close)
-
-        val autoComplete = searchView.findViewById<SearchView.SearchAutoComplete>(androidx.appcompat.R.id.search_src_text)
-        autoComplete.setTextColor(Color.parseColor("#c7c7c7"))
-        autoComplete.setBackgroundColor(Color.parseColor("#101010"))
-        autoComplete.setDropDownBackgroundResource(drawable.search_input)
-
-        val labels = listOf("Грудь", "Бицепс", "Спина", "Трицепс", "Ноги", "Плечи")
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, labels)
-        autoComplete.setAdapter(adapter)
-
-        autoComplete.setOnItemClickListener { parent, _, position, _ ->
-            val str = parent.getItemAtPosition(position) as String
-            autoComplete.setText(str)
-            val imm = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.toggleSoftInput(InputMethodManager.RESULT_HIDDEN, 0)
-        }
-
-        searchView.onQueryTextChanged {
-            viewModel.searchQuery.value = it
-        }
     }
 
     override fun onItemClick(work: Work) {

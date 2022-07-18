@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -44,11 +45,11 @@ class MainActivity : AppCompatActivity(), TitleListener {
     fun authUser() {
         val user = auth.currentUser
         if (user != null)
-//            Toast.makeText(
-//                this@MainActivity,
-//                "Пользователь  ${user.email} в системе",
-//                Toast.LENGTH_SHORT
-//            ).show()
+            Toast.makeText(
+                this@MainActivity,
+                "Пользователь  ${user.email} в системе",
+                Toast.LENGTH_SHORT
+            ).show()
         else {
             val email = getString(R.string.user_email)
             val password = getString(R.string.user_password)
@@ -90,7 +91,6 @@ class MainActivity : AppCompatActivity(), TitleListener {
             )
         )
         val toolbar = findViewById<Toolbar>(id.toolbar)
-        //toolbar.overflowIcon = ContextCompat.getDrawable(this, R.drawable.ic_filter)
 
         setSupportActionBar(toolbar)
         supportActionBar?.setBackgroundDrawable(

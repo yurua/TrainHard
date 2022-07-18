@@ -94,8 +94,8 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:strokeColor="@color/gray"
-      app:strokeWidth="0.1dp"
+      app:strokeColor="@color/white38"
+      app:strokeWidth="0.5dp"
       >
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendarView"
@@ -117,7 +117,7 @@
         app:pagesColor="@color/darker"
         app:previousButtonSrc="@drawable/ic_prev_month"
         app:selectionColor="@color/colorAccent2"
-        app:selectionLabelColor="@color/lightGray"
+        app:selectionLabelColor="@color/gray"
         app:todayLabelColor="@color/colorAccent2"
         app:type="one_day_picker"
         />

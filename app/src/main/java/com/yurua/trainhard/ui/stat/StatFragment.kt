@@ -150,7 +150,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         }
 
         yAxis = binding.chart.axisLeft
-        yAxis.gridColor = Color.parseColor("#6a6a6a")
+        yAxis.gridColor = Color.parseColor("#454545")
         yAxis.textSize = 10f
         yAxis.axisLineWidth = 0.1f
         yAxis.gridLineWidth = 0.6f
@@ -160,7 +160,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         xAxis = binding.chart.xAxis
         xAxis.position = BOTTOM
         xAxis.axisLineWidth = 0.1f
-        xAxis.gridColor = Color.parseColor("#6a6a6a")
+        xAxis.gridColor = Color.parseColor("#454545")
         xAxis.textSize = 10f
         xAxis.gridLineWidth = 0.6f
         xAxis.setDrawLabels(false)
