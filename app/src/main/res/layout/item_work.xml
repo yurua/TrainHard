@@ -16,12 +16,12 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:cardBackgroundColor="@color/darker"
-      app:cardCornerRadius="8dp"
+      app:cardCornerRadius="0dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:strokeColor="@color/darker"
+      app:strokeColor="@color/darkGray"
       app:strokeWidth="0.5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +65,7 @@
           android:fontFamily="@font/sans_cyr"
           android:text="Грудь"
           android:textAlignment="center"
-          android:textColor="@color/white87"
+          android:textColor="@color/white"
           android:textSize="17sp"
           android:textStyle="bold"
           android:visibility="visible"

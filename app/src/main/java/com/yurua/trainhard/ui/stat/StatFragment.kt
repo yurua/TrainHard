@@ -47,7 +47,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_fragment_stat, menu)
         // По-умолчанию выбранная группа мышц - грудь
-        menu.findItem(R.id.stat_shoul).isChecked = true
+        menu.findItem(R.id.stat_chest).isChecked = true
     }
 
     // Показ подзаголовка окна
@@ -137,7 +137,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
                 lineWidth = 1.5f
                 circleRadius = 4f
                 circleHoleRadius = 3f
-                circleHoleColor = Color.parseColor("#000000")
+                circleHoleColor = Color.parseColor("#080808")
                 colors = arrayListOf(Color.parseColor("#1af9c2"))
                 circleColors = arrayListOf(Color.parseColor("#1af9c2"))
                 valueTextSize = 10f
@@ -150,7 +150,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         }
 
         yAxis = binding.chart.axisLeft
-        yAxis.gridColor = Color.parseColor("#454545")
+        yAxis.gridColor = Color.parseColor("#393939")
         yAxis.textSize = 10f
         yAxis.axisLineWidth = 0.1f
         yAxis.gridLineWidth = 0.6f
@@ -160,7 +160,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         xAxis = binding.chart.xAxis
         xAxis.position = BOTTOM
         xAxis.axisLineWidth = 0.1f
-        xAxis.gridColor = Color.parseColor("#454545")
+        xAxis.gridColor = Color.parseColor("#393939")
         xAxis.textSize = 10f
         xAxis.gridLineWidth = 0.6f
         xAxis.setDrawLabels(false)
@@ -170,7 +170,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         binding.chart.axisRight.isEnabled = false
         binding.chart.description.isEnabled = false
 
-        binding.chart.setBackgroundColor(Color.parseColor("#000000"))
+        binding.chart.setBackgroundColor(Color.parseColor("#080808"))
 
         binding.rg.setOnCheckedChangeListener { _, _ ->
 
@@ -212,7 +212,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
 
         }
 
-        val title = "Плечи"
+        val title = "Грудь"
         val gyms = viewModel.getGymsByGroup(title)
         // Отобразить данные первого упражнения на грудь
         binding.b1.text = "  ${gyms[0]}"

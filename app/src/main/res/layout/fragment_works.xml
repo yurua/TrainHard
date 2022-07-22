@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/darker"
+    android:background="@color/dark"
     tools:context=".ui.works.WorksFragment"
     >
 
@@ -28,7 +28,7 @@
       android:elevation="6dp"
       app:backgroundTint="@color/colorAccent"
       app:srcCompat="@drawable/ic_new_work"
-      app:tint="@color/colorPrimary"
+      app:tint="@color/darker"
       />
 
   <androidx.constraintlayout.widget.ConstraintLayout

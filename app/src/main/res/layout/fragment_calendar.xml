@@ -83,11 +83,13 @@
         android:textAlignment="center"
         android:textSize="13sp" />
   </com.google.android.material.chip.ChipGroup>
+
   <com.google.android.material.card.MaterialCardView
       android:id="@+id/cardView"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
       android:layout_marginEnd="8dp"
       app:cardBackgroundColor="@color/darker"
       app:cardCornerRadius="8dp"
@@ -95,8 +97,8 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:strokeColor="@color/white38"
-      app:strokeWidth="0.5dp"
-      >
+      app:strokeWidth="0.5dp">
+
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendarView"
         android:layout_width="wrap_content"
@@ -104,7 +106,7 @@
         android:background="@color/darker"
         app:abbreviationsBarColor="@color/dark"
         app:abbreviationsLabelsColor="@color/white60"
-        app:anotherMonthsDaysLabelsColor="@color/lightGray"
+        app:anotherMonthsDaysLabelsColor="@color/white38"
         app:daysLabelsColor="@color/white60"
         app:eventsEnabled="true"
         app:forwardButtonSrc="@drawable/ic_next_month"
@@ -116,11 +118,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:pagesColor="@color/darker"
         app:previousButtonSrc="@drawable/ic_prev_month"
-        app:selectionColor="@color/colorAccent2"
+        app:selectionColor="@color/colorAccent"
         app:selectionLabelColor="@color/gray"
-        app:todayLabelColor="@color/colorAccent2"
-        app:type="one_day_picker"
-        />
+        app:todayLabelColor="@color/colorAccent"
+        app:type="one_day_picker" />
   </com.google.android.material.card.MaterialCardView>
   <View
       android:id="@+id/divider2"
@@ -142,7 +143,7 @@
       android:fontFamily="@font/sans_cyr"
       android:text="Группы"
       android:textSize="18sp"
-      android:textColor="@color/white60"
+      android:textColor="@color/white87"
       app:layout_constraintStart_toStartOf="@+id/cardView"
       app:layout_constraintTop_toBottomOf="@+id/cardView"
       tools:text="Группы"

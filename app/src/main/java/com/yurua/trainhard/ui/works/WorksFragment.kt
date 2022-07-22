@@ -44,6 +44,7 @@ import com.yurua.trainhard.util.exhaustive
 import com.yurua.trainhard.util.onQueryTextChanged
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
 
@@ -68,11 +69,10 @@ class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
 
                 val searchItem = menu.findItem(R.id.action_search)
                 val searchView = searchItem.actionView as SearchView
-                searchView.background =
-                    ContextCompat.getDrawable(requireContext(), drawable.search_input)
+                searchView.background = ContextCompat.getDrawable(requireContext(), drawable.search_input)
                 searchView.apply {
                     queryHint = HtmlCompat.fromHtml(
-                        "<font color = #515151> Поиск по группе </font>",
+                        "<font color = #FFACACAC> Поиск по группе </font>",
                         HtmlCompat.FROM_HTML_MODE_LEGACY
                     )
                     imeOptions = EditorInfo.IME_ACTION_DONE
@@ -82,8 +82,10 @@ class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
                 iconClose.setImageResource(drawable.ic_search_close)
 
                 val autoComplete = searchView.findViewById<SearchView.SearchAutoComplete>(androidx.appcompat.R.id.search_src_text)
+                autoComplete.textSize = 17.0f
+                autoComplete.setHintTextColor(Color.parseColor("#c7c7c7"))
                 autoComplete.setTextColor(Color.parseColor("#c7c7c7"))
-                autoComplete.setBackgroundColor(Color.parseColor("#101010"))
+                autoComplete.setBackgroundColor(Color.parseColor("#202020"))
                 autoComplete.setDropDownBackgroundResource(drawable.search_input)
 
                 val labels = listOf("Грудь", "Бицепс", "Спина", "Трицепс", "Ноги", "Плечи")

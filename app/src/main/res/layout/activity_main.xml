@@ -60,7 +60,7 @@
   <View
       android:id="@+id/view"
       android:layout_width="wrap_content"
-      android:layout_height="1.0dp"
+      android:layout_height="0.5dp"
       android:layout_marginTop="60dp"
       android:background="@color/darker"
       app:layout_constraintEnd_toEndOf="parent"
@@ -71,8 +71,8 @@
   <View
       android:id="@+id/view2"
       android:layout_width="409dp"
-      android:layout_height="1.0dp"
-      android:background="@color/dark"
+      android:layout_height="0.5dp"
+      android:background="@color/darkGray"
       android:visibility="visible"
       app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
       app:layout_constraintEnd_toEndOf="parent"

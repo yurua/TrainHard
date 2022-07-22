@@ -55,38 +55,38 @@
 
     <string-array name="chest">
         <item>"Жим штанги лежа"</item>
-        <item>"Жим гантелей"</item>
+        <item>"Жим гантелей под углом"</item>
         <item>"Разведение гантелей"</item>
     </string-array>
 
     <string-array name="biceps">
-        <item>"Молоток в упоре сидя"</item>
-        <item>"Подъем гантелей на бицепс"</item>
-        <item>"Подъем штанги на бицепс"</item>
+        <item>"Молоток сидя"</item>
+        <item>"Подъем гантелей на бицепс сидя"</item>
+        <item>"Подъем штанги на бицепс стоя"</item>
     </string-array>
 
     <string-array name="back">
         <item>"Тяга штанги в наклоне"</item>
         <item>"Тяга гантели в наклоне"</item>
-        <item>"Становая тяга"</item>
+        <item>"Подтягивание"</item>
     </string-array>
 
     <string-array name="triceps">
         <item>"Жим узким хватом"</item>
         <item>"Французский жим"</item>
-        <item>"Сгибание гантели за головой"</item>
+        <item>"Брусья"</item>
     </string-array>
 
     <string-array name="shoulders">
-        <item>"Жим Арнольда сидя"</item>
-        <item>"Разводка гантелей в наклоне"</item>
+        <item>"Жим гантелей сидя"</item>
+        <item>"Жим штанги стоя"</item>
         <item>"Высокая тяга штанги"</item>
     </string-array>
 
     <string-array name="legs">
         <item>"Приседание"</item>
         <item>"Мертвая тяга"</item>
-        <item>"Выпады с гантелями"</item>
+        <item>"Становая тяга"</item>
     </string-array>
 
     <string name="version">Версия 1.0 beta 1</string>
