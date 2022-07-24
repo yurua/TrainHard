@@ -22,6 +22,8 @@ import com.yurua.trainhard.R.id
 import com.yurua.trainhard.databinding.ActivityMainBinding
 import com.yurua.trainhard.util.TitleListener
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.DateFormat
+import java.util.*
 
 var currDestination: Int = 0
 const val GYM_RESULT_OK = Activity.RESULT_FIRST_USER
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity(), TitleListener {
     }
 
     fun authUser() {
+
         val user = auth.currentUser
         if (user != null)
 //            Toast.makeText(

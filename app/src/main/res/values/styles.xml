@@ -16,6 +16,13 @@
         <item name="android:statusBarColor">@color/darker</item>
         <item name="android:navigationBarColor">@color/darker</item>
         <item name="preferenceTheme">@style/Pref</item>
+        <item name="materialCalendarTheme">@style/CalendarStyle</item>
+    </style>
+
+    <style name="CalendarStyle" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="dialogTheme">@style/DialogTheme</item>
+        <item name="colorSurface">@color/dark</item>
     </style>
 
     <style name="popupMenuStyle" parent="Widget.AppCompat.PopupMenu.Overflow">

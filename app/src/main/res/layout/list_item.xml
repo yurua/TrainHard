@@ -15,7 +15,7 @@
       android:paddingTop="10dp"
       android:textSize="18sp"
       android:fontFamily="@font/sans_cyr"
-      android:background="#a3a3a3"
+      android:background="#DFFFFFFF"
       android:textColor="@color/dark"
       android:paddingBottom="10dp" />
 </LinearLayout>

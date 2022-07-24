@@ -14,7 +14,6 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.text.HtmlCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -69,40 +68,16 @@ class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
 
                 val searchItem = menu.findItem(R.id.action_search)
                 val searchView = searchItem.actionView as SearchView
-                searchView.background = ContextCompat.getDrawable(requireContext(), drawable.search_input)
+                searchView.background =
+                    ContextCompat.getDrawable(requireContext(), drawable.search_input)
                 searchView.apply {
-                    queryHint = HtmlCompat.fromHtml(
-                        "<font color = #FFACACAC> Поиск по группе </font>",
-                        HtmlCompat.FROM_HTML_MODE_LEGACY
-                    )
+                    queryHint = "Поиск по группе"
                     imeOptions = EditorInfo.IME_ACTION_DONE
                 }
 
-                val iconClose = searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
+                val iconClose =
+                    searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
                 iconClose.setImageResource(drawable.ic_search_close)
-
-                val autoComplete = searchView.findViewById<SearchView.SearchAutoComplete>(androidx.appcompat.R.id.search_src_text)
-                autoComplete.textSize = 17.0f
-                autoComplete.setHintTextColor(Color.parseColor("#c7c7c7"))
-                autoComplete.setTextColor(Color.parseColor("#c7c7c7"))
-                autoComplete.setBackgroundColor(Color.parseColor("#202020"))
-                autoComplete.setDropDownBackgroundResource(drawable.search_input)
-
-                val labels = listOf("Грудь", "Бицепс", "Спина", "Трицепс", "Ноги", "Плечи")
-                val adapter = ArrayAdapter(
-                    requireContext(),
-                    android.R.layout.simple_dropdown_item_1line,
-                    labels
-                )
-                autoComplete.setAdapter(adapter)
-
-                autoComplete.setOnItemClickListener { parent, _, position, _ ->
-                    val str = parent.getItemAtPosition(position) as String
-                    autoComplete.setText(str)
-                    val imm =
-                        context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.hideSoftInputFromWindow(activity?.currentFocus?.windowToken, 0)
-                }
 
                 searchView.onQueryTextChanged {
                     viewModel.searchQuery.value = it

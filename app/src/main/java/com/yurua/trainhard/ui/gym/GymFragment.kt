@@ -20,21 +20,21 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.yurua.trainhard.R
 import com.yurua.trainhard.data.Work
 import com.yurua.trainhard.databinding.FragmentGymBinding
 import com.yurua.trainhard.ui.MainActivity
 import com.yurua.trainhard.ui.gym.GymViewModel.GymEvent.NavigateBack
-import com.yurua.trainhard.util.getBackgroundByGroup
-import com.yurua.trainhard.util.getColorByGroup
-import com.yurua.trainhard.util.getGroups
-import com.yurua.trainhard.util.workToGym
+import com.yurua.trainhard.util.*
 import dagger.hilt.android.AndroidEntryPoint
-import java.text.DateFormat
 import java.util.*
 
 @AndroidEntryPoint
 class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
+
+    // По умолчанию тренировке присваивается текущая дата
+    private var gymDate = Date().convertToString()
 
     private val viewModel: GymViewModel by viewModels()
     private val args: GymFragmentArgs by navArgs()
@@ -130,13 +130,21 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
         }
     }
 
+    private fun showCalendar() {
+        val datePicker = MaterialDatePicker.Builder.datePicker().build()
+        datePicker.show(requireActivity().supportFragmentManager, "DatePicker")
+        datePicker.addOnPositiveButtonClickListener {
+            gymDate = Date(it).convertToString()
+            (activity as MainActivity).supportActionBar?.subtitle = gymDate
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentGymBinding.bind(view)
 
-        val date = DateFormat.getDateInstance(DateFormat.LONG).format(Date())
-        (activity as MainActivity).supportActionBar?.subtitle = date
+        (activity as MainActivity).supportActionBar?.subtitle = gymDate
 
         work = args.work
 
@@ -145,15 +153,18 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.menu_fragment_gym, menu)
 
-                menu.findItem(R.id.gym_save).apply {
-                    isVisible = isGymCompleted
-                }
+                menu.findItem(R.id.gym_save).isVisible = isGymCompleted
+                menu.findItem(R.id.gym_date).isVisible = isGymCompleted
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.gym_save -> {
                         saveWork()
+                        true
+                    }
+                    R.id.gym_date -> {
+                        showCalendar()
                         true
                     }
                     else -> false
@@ -804,9 +815,8 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
             groups += "Плечи/"
 
         val groupsClean = groups.substring(0, groups.lastIndexOf('/'))
-        val date = DateFormat.getDateInstance(DateFormat.LONG).format(Date())
 
-        val work = Work(date, groupsClean, chest, biceps, triceps, legs, shoul, back)
+        val work = Work(gymDate, groupsClean, chest, biceps, triceps, legs, shoul, back)
 
         viewModel.saveWork(work)
 
