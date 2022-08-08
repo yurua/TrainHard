@@ -137,9 +137,9 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
                 lineWidth = 1.5f
                 circleRadius = 4f
                 circleHoleRadius = 3f
-                circleHoleColor = Color.parseColor("#080808")
-                colors = arrayListOf(Color.parseColor("#1af9c2"))
-                circleColors = arrayListOf(Color.parseColor("#1af9c2"))
+                circleHoleColor = Color.parseColor("#000000")
+                colors = arrayListOf(Color.parseColor("#adff2f"))
+                circleColors = arrayListOf(Color.parseColor("#adff2f"))
                 valueTextSize = 10f
                 valueTextColor = Color.parseColor("#dfFFFFFF")
                 axisDependency = YAxis.AxisDependency.LEFT
@@ -170,7 +170,7 @@ class StatFragment : Fragment(R.layout.fragment_stat) {
         binding.chart.axisRight.isEnabled = false
         binding.chart.description.isEnabled = false
 
-        binding.chart.setBackgroundColor(Color.parseColor("#080808"))
+        binding.chart.setBackgroundColor(Color.parseColor("#000000"))
 
         binding.rg.setOnCheckedChangeListener { _, _ ->
 

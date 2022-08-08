@@ -40,7 +40,7 @@
     <string name="menu_save">Сохранить тренировку</string>
     <string name="menu_chart">Группа мышц</string>
 
-    <string name="version_code">1.0 beta 2</string>
+    <string name="version_code">1.0 beta 4</string>
 
     <string name="preferences">com.yurua.trainhard_preferences.xml</string>
 
@@ -89,7 +89,7 @@
         <item>"Становая тяга"</item>
     </string-array>
 
-    <string name="version">Версия 1.0 beta 2</string>
+    <string name="version">Версия 1.0 beta 4</string>
 
     <string name="sync_status">Синхронизация данных...</string>
     <string name="show_auto">Подсказки при поиске</string>

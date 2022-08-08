@@ -1,15 +1,18 @@
 package com.yurua.trainhard.util
 
+import androidx.fragment.app.Fragment
 import com.yurua.trainhard.R
 import com.yurua.trainhard.data.Work
+import com.yurua.trainhard.ui.MainActivity
 import java.text.DateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-
-fun Date.convertToString(): String {
-    return DateFormat.getDateInstance(DateFormat.LONG).format(this)
+fun Fragment.setSubtitle(str: String) {
+    (activity as MainActivity).supportActionBar?.subtitle = str
 }
+
+fun Date.str(): String = DateFormat.getDateInstance(DateFormat.LONG).format(this)
 
 val <T> T.exhaustive: T
     get() = this

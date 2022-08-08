@@ -19,7 +19,7 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import com.yurua.trainhard.R
 import com.yurua.trainhard.ui.MainActivity
-import com.yurua.trainhard.ui.currDestination
+import com.yurua.trainhard.ui.prevDestination
 import com.yurua.trainhard.ui.sync.SyncFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -71,23 +71,11 @@ class MoreFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeLi
     super.onViewCreated(view, savedInstanceState)
   }
 
-
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-
-    requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
-      override fun handleOnBackPressed() {
-        findNavController().navigate(currDestination)
-      }
-    })
-
-  }
-
   private fun isNetworkConnected(): Boolean {
     val connectivityManager =
       activity?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val networkInfo = connectivityManager.activeNetworkInfo
-    return networkInfo != null && networkInfo.isConnected
+    return (networkInfo != null) && networkInfo.isConnected
   }
 
   @SuppressLint("SdCardPath")

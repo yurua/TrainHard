@@ -5,15 +5,15 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Html
 import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.text.HtmlCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -68,15 +68,13 @@ class WorksFragment : Fragment(layout.fragment_works), OnItemClickListener {
 
                 val searchItem = menu.findItem(R.id.action_search)
                 val searchView = searchItem.actionView as SearchView
-                searchView.background =
-                    ContextCompat.getDrawable(requireContext(), drawable.search_input)
+
                 searchView.apply {
-                    queryHint = "Поиск по группе"
+                    queryHint = HtmlCompat.fromHtml("<font color = #b3b3b3>" + "Поиск по группе" + "</font>", HtmlCompat.FROM_HTML_MODE_LEGACY)
                     imeOptions = EditorInfo.IME_ACTION_DONE
                 }
 
-                val iconClose =
-                    searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
+                val iconClose = searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
                 iconClose.setImageResource(drawable.ic_search_close)
 
                 searchView.onQueryTextChanged {

@@ -7,10 +7,12 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -22,10 +24,8 @@ import com.yurua.trainhard.R.id
 import com.yurua.trainhard.databinding.ActivityMainBinding
 import com.yurua.trainhard.util.TitleListener
 import dagger.hilt.android.AndroidEntryPoint
-import java.text.DateFormat
-import java.util.*
 
-var currDestination: Int = 0
+var prevDestination = 0
 const val GYM_RESULT_OK = Activity.RESULT_FIRST_USER
 
 @AndroidEntryPoint
@@ -90,6 +90,7 @@ class MainActivity : AppCompatActivity(), TitleListener {
                 id.workFragment,
                 id.statFragment,
                 id.calendarFragment,
+                id.moreFragment
             )
         )
         val toolbar = findViewById<Toolbar>(id.toolbar)
@@ -111,20 +112,21 @@ class MainActivity : AppCompatActivity(), TitleListener {
         binding.bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
+        navController.addOnDestinationChangedListener { controller, destination, _ ->
             when (destination.id) {
                 id.workFragment, id.statFragment, id.calendarFragment -> {
-                    binding.bottomNavigationView.visibility =
-                        View.VISIBLE
-                    currDestination = destination.id
+                    binding.bottomNavigationView.visibility = View.VISIBLE
+                    prevDestination = controller.currentDestination!!.id
                 }
-                else -> binding.bottomNavigationView.visibility = View.GONE
+                else -> {
+                    binding.bottomNavigationView.visibility = View.GONE
+                }
             }
         }
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        navController.navigate(currDestination)
+        navController.navigate(prevDestination)
         return true
     }
 

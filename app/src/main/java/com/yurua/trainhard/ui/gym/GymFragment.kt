@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.os.bundleOf
@@ -34,7 +35,7 @@ import java.util.*
 class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
 
     // По умолчанию тренировке присваивается текущая дата
-    private var gymDate = Date().convertToString()
+    private var gymDate = Date().str()
 
     private val viewModel: GymViewModel by viewModels()
     private val args: GymFragmentArgs by navArgs()
@@ -44,6 +45,7 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
     private var _binding: FragmentGymBinding? = null
     private val binding
         get() = _binding!!
+
 
     private fun setupGyms(work: Work) {
         val gyms = workToGym(work)
@@ -131,11 +133,11 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
     }
 
     private fun showCalendar() {
-        val datePicker = MaterialDatePicker.Builder.datePicker().build()
+        val datePicker = MaterialDatePicker.Builder.datePicker().setSelection(MaterialDatePicker.todayInUtcMilliseconds()).build()
         datePicker.show(requireActivity().supportFragmentManager, "DatePicker")
         datePicker.addOnPositiveButtonClickListener {
-            gymDate = Date(it).convertToString()
-            (activity as MainActivity).supportActionBar?.subtitle = gymDate
+            gymDate = Date(it).str()
+            setSubtitle(gymDate)
         }
     }
 
@@ -144,7 +146,7 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
 
         _binding = FragmentGymBinding.bind(view)
 
-        (activity as MainActivity).supportActionBar?.subtitle = gymDate
+        setSubtitle(gymDate)
 
         work = args.work
 
@@ -222,7 +224,7 @@ class GymFragment : Fragment(R.layout.fragment_gym), View.OnClickListener {
                 )
             }
 
-            (activity as MainActivity).supportActionBar?.subtitle = it.date
+        setSubtitle(it.date)
         }
 
         binding.ivAddRoutine1.setOnClickListener(this)

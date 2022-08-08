@@ -96,7 +96,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:strokeColor="@color/white38"
+      app:strokeColor="@color/ultraLight"
       app:strokeWidth="0.5dp">
 
     <com.applandeo.materialcalendarview.CalendarView
